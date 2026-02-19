@@ -22,7 +22,8 @@ def sort_book_by_isbn(books):
             continue  
 
         if sort_choice == 0:
-            return
+            print("Back to menu...!")
+            break
 
         if sort_choice == 1:
             books.sort(key=lambda b: int(b["isbn"]))
@@ -35,6 +36,10 @@ def sort_book_by_isbn(books):
         save(books)
         print("\n===========| Sorted Books |===========")
         for b in books:
-            print(f"ISBN: {b['isbn']} | Title: {b['title']} | Type: {b['type']} | Author: {b['author']}")
-        print("======================================")
+            print(f"ISBN  : {b['isbn']}")
+            print(f"Title : {b['title']}")
+            print(f"Type  : {b['type']}")
+            print(f"Author: {b['author']}")
+            print("----------------------------------------------")
+        
         return

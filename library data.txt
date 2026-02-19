@@ -1,8 +1,9 @@
-1|To Kill a Mockingbird|Southern Gothic/Classic|Harper Lee
+1|Kolarb Pailen|Novel|Nhok Thaem
 2|Tum Teav|Novel|Phi Kho Sorm
-3|Romeo and Juliet|Tragedy/Play|William Shakespeare
 4|Harry Potter and the Sorcerer's Stone|Fantasy|J.K. Rowling
 5|The Da Vinci Code|Thriller|Dan Brown
 6|Pride and Prejudice|Romance|Jane Austen
 7|Animal Farm|Fiction|George Orwell
 8|The Lord of the Rings|High Fantasy|J.R.R. Tolkien
+9|Toy Story|Cartoon|Me
+10|Gone|Drama|Rose

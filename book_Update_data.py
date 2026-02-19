@@ -1,7 +1,8 @@
 from  book_Add_data import save_data
-
+RED = "\033[31m"
+RESET = "\033[0m"
 def update_book(books):
-    print("==============| Update Books |===============")
+    
     found = False
     try:
         update_isbn = int(input("Enter Book ISBN to Update: "))
@@ -12,16 +13,25 @@ def update_book(books):
         print("=================================")
         print("\n")
         return  
-    if not found:
+    
+    if not books:
             print(f"Book ISBN: {update_isbn} NOT FOUND")
     
 
     for b in books:
         if int(b["isbn"]) == update_isbn:
 
-            print("\nBook Found! Enter new information:")
+            print("\nBook Found!")
+            print("===========| Update New Information |==========")
 
-            new_title = input("Enter New Book Title: ").strip()
+           
+            while True: 
+                new_title = input("Enter New Book Title: ").strip()
+                if any(b["title"].strip().casefold() == new_title.casefold() for b in books):
+                    print(f"Error: Book Title {RED}{new_title}{RESET} already exists. Please enter a different title.")
+                    continue
+          
+                break  
             new_type = input("Enter New Book Type: ").strip()
             new_author = input("Enter New Book Author: ").strip()
 

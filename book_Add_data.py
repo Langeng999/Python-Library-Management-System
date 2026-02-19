@@ -1,5 +1,9 @@
 from book_Save_data import save_data
 
+RED = "\033[31m"
+RESET = "\033[0m"
+GREEN = "\033[32m"
+
 def input_not_blank(prompt):
     while True:
         value = input(prompt).strip()
@@ -11,6 +15,7 @@ def input_not_blank(prompt):
 def add_book(books):
     print("==============| Add Book |===============")
 
+    # ----- Step 1: Input unique ISBN -----
     while True:
         try:
             isbn = int(input("Enter Book ISBN: "))
@@ -19,15 +24,24 @@ def add_book(books):
             continue
 
         if any(int(b["isbn"]) == isbn for b in books):
-            print("ERROR: This ISBN already exists. Try another one.")
+            print(f"ERROR: ISBN {RED}{isbn}{RESET} already exists. Try another one.")
             continue
 
-        break 
+        break  
 
-    title  = input_not_blank("Enter Book Title: ")
+    # ----- Step 2: Input unique title -----
+    while True:
+        title = input_not_blank("Enter Book Title: ")
+        if any(b["title"].strip().casefold() == title.casefold() for b in books):
+            print(f"ALERT: Book Title {RED}{title}{RESET} already exists. Please enter a different title.")
+            continue
+        break  
+
+    # ----- Step 3: Input other fields -----
     btype  = input_not_blank("Enter Book Type: ")
     author = input_not_blank("Enter Book Author: ")
 
+    # ----- Step 4: Save new book -----
     new_book = {
         "isbn": isbn,
         "title": title,
@@ -37,4 +51,4 @@ def add_book(books):
 
     books.append(new_book)
     save_data(books)
-    print("Book Successfully Added!")
+    print(f"Book '{GREEN}{title}{RESET}' Successfully Added!")
