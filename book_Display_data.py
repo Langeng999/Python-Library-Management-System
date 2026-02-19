@@ -1,0 +1,17 @@
+def display_book(books):
+    print("==============| Display All Books |==========")
+    if not books:
+        print("\n")
+        print("=================================")
+        print("|         Book Not Found        |")
+        print("=================================")
+        print("\n")
+        return  
+
+    print("-" * 50)
+    for b in books:
+        print(f"ISBN  : {b['isbn']}")
+        print(f"Title : {b['title']}")
+        print(f"Type  : {b['type']}")
+        print(f"Author: {b['author']}")
+        print("----------------------------------------------")
