@@ -1,7 +1,8 @@
 file_name = "library data.txt"
 SEP = "|"
 
-def save_data(books):
+def save_data(books): 
+    #encoding is use for another language input 
     with open(file_name, "w", encoding="utf-8") as file:
        
         for b in books:

@@ -49,7 +49,7 @@ while True:
         delete(books)
         print("\n")
     elif choice == 0:
-        print("Exiting... Bye!")
+        print("Exiting System...!")
         break
 
     else:

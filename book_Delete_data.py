@@ -1,22 +1,24 @@
 from book_Save_data import save_data 
 
+#color
 RED = "\033[31m"
 RESET = "\033[0m"
+
 
 def delete_book(books):
     print("=============| Delete by ISBN |============")
 
     delete_isbn = input("Enter ISBN to Delete: ").strip()
-    if delete_isbn == "":
+    if delete_isbn == "": #avoiding blank input
         print("ERROR: ISBN cannot be blank.")
         return
 
     try:
         delete_isbn = int(delete_isbn)
-    except:
+    except ValueError:
         print("\n")
         print("=================================")
-        print("|  Error: PLEASE INPUT NUMBER   |")
+        print("| TRY AGAIN: PLEASE INPUT NUMBER |")
         print("=================================")
         print("\n")
 
@@ -26,5 +28,5 @@ def delete_book(books):
             books.pop(i)
             save_data(books)
             return
-        
-    print(f"Book ISBN {RED}{delete_isbn}{RESET} NOT FOUND")
+    if not books:
+        print(f"Book ISBN {RED}{delete_isbn}{RESET} NOT FOUND")

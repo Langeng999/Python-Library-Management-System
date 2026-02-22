@@ -4,6 +4,7 @@ RED = "\033[31m"
 RESET = "\033[0m"
 GREEN = "\033[32m"
 
+#function use for avoiding blank option
 def input_not_blank(prompt):
     while True:
         value = input(prompt).strip()
@@ -19,7 +20,7 @@ def add_book(books):
     while True:
         try:
             isbn = int(input("Enter Book ISBN: "))
-        except ValueError:
+        except Exception :
             print("ERROR: ISBN must be a number. Try again.")
             continue
 
@@ -30,18 +31,33 @@ def add_book(books):
         break  
 
     # ----- Step 2: Input unique title -----
+    #handle blank field and duplicate title
     while True:
-        title = input_not_blank("Enter Book Title: ")
+        title = input_not_blank("Enter Book Title: ") #check blank 
         if any(b["title"].strip().casefold() == title.casefold() for b in books):
-            print(f"ALERT: Book Title {RED}{title}{RESET} already exists. Please enter a different title.")
+            print(f"Error: Book Title {RED}{title}{RESET} already exists. Please enter a different title.")
             continue
         break  
 
     # ----- Step 3: Input other fields -----
-    btype  = input_not_blank("Enter Book Type: ")
-    author = input_not_blank("Enter Book Author: ")
+    #handle number input
+    while True: 
+        btype  = input_not_blank("Enter Book Type: ")
+        #handle number input
+        if btype.isdigit():
+            print("Book Type can not be Number")
+            continue    
+        break
+    
+    #handle number input
+    while True:
+        author = input_not_blank("Enter Book Author: ")
+        if author.isdigit():
+            print("Book Author can not be Number")
+            continue
+        break
 
-    # ----- Step 4: Save new book -----
+    #save new input book to file
     new_book = {
         "isbn": isbn,
         "title": title,
@@ -49,6 +65,7 @@ def add_book(books):
         "author": author,
     }
 
+    #add new book to file
     books.append(new_book)
     save_data(books)
     print(f"Book '{GREEN}{title}{RESET}' Successfully Added!")

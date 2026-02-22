@@ -1,3 +1,5 @@
+RED = "\033[31m"
+RESET = "\033[0m"
 def search_data(books):
     print("==============| Search Books |===============")
 
@@ -20,4 +22,4 @@ def search_data(books):
             print("----------------------------------------------")
             return
 
-    print(f"Book ISBN: {search_isbn} NOT FOUND")
+    print(f"Book ISBN: {RED}{search_isbn}{RESET}NOT FOUND")

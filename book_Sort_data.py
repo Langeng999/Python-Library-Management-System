@@ -4,7 +4,7 @@ def sort_book_by_isbn(books):
         print("No book found!")
         return
 
-    while True:
+    while True: #menu chosing option sort book (from small to big or from big to small)
         print("\n=============| Sort Book (ISBN) |============")
         print("|          1. Ascending Order               |")
         print("|          2. Descending Order              |")
@@ -13,7 +13,7 @@ def sort_book_by_isbn(books):
 
         try:
             sort_choice = int(input("Enter Choice [0-2]: "))
-        except ValueError:
+        except ValueError: #if user input letter it will show error
             print("\n")
             print("=================================")
             print("|  Error: PLEASE INPUT NUMBER   |")
@@ -21,11 +21,11 @@ def sort_book_by_isbn(books):
             print("\n")
             continue  
 
-        if sort_choice == 0:
+        if sort_choice == 0: #select 0 to back to main menu
             print("Back to menu...!")
             break
 
-        if sort_choice == 1:
+        if sort_choice == 1: 
             books.sort(key=lambda b: int(b["isbn"]))
         elif sort_choice == 2:
             books.sort(key=lambda b: int(b["isbn"]), reverse=True)

@@ -1,8 +1,17 @@
 from  book_Add_data import save_data
 RED = "\033[31m"
 RESET = "\033[0m"
+
+def input_not_blank(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value == "":
+            print("ERROR: This field cannot be blank. Please input again.")
+        else:
+            return value
+        
 def update_book(books):
-    
+    print("===========| Update Book Information |==========")
     found = False
     try:
         update_isbn = int(input("Enter Book ISBN to Update: "))
@@ -13,27 +22,41 @@ def update_book(books):
         print("=================================")
         print("\n")
         return  
-    
-    if not books:
-            print(f"Book ISBN: {update_isbn} NOT FOUND")
-    
-
+   
     for b in books:
         if int(b["isbn"]) == update_isbn:
-
-            print("\nBook Found!")
-            print("===========| Update New Information |==========")
+            print("\nBook Found!") 
+            print("===========| Input New Information |==========")
 
            
-            while True: 
-                new_title = input("Enter New Book Title: ").strip()
+            while True:  #if title duplicate it'll show message
+                new_title = input_not_blank("Enter New Book Title: ").strip()
                 if any(b["title"].strip().casefold() == new_title.casefold() for b in books):
                     print(f"Error: Book Title {RED}{new_title}{RESET} already exists. Please enter a different title.")
                     continue
-          
-                break  
-            new_type = input("Enter New Book Type: ").strip()
-            new_author = input("Enter New Book Author: ").strip()
+                break
+            
+            
+            while True: 
+                #handle blank input 
+                new_type = input_not_blank("Enter New Book Type: ").strip()
+                #handle number input
+                if new_type.isdigit():
+                    print("Book Type can not be NUMBER")
+                    continue
+                break
+            
+
+            while True:
+                #handle blank input
+                new_author = input_not_blank("Enter New Book Author: ").strip()
+                #handle number input
+                if new_author.isdigit():
+                    print("Book Author can not be Number")
+                    continue
+                break
+
+
 
             # Update values
             b["title"] = new_title
@@ -46,4 +69,6 @@ def update_book(books):
             found = True
             break
 
+    if not found:
+        print(f"Book ISBN: {RED} {update_isbn} {RESET}NOT FOUND")
    

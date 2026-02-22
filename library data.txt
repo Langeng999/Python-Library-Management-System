@@ -1,9 +1,9 @@
-1|Kolarb Pailen|Novel|Nhok Thaem
-2|Tum Teav|Novel|Phi Kho Sorm
-4|Harry Potter and the Sorcerer's Stone|Fantasy|J.K. Rowling
-5|The Da Vinci Code|Thriller|Dan Brown
-6|Pride and Prejudice|Romance|Jane Austen
-7|Animal Farm|Fiction|George Orwell
-8|The Lord of the Rings|High Fantasy|J.R.R. Tolkien
-9|Toy Story|Cartoon|Me
-10|Gone|Drama|Rose
+2|Of Mice and Men|030132|313
+3|In Cold Blood|True Crime|Truman Capote
+4|1984|Dystopian/Classic|George Orwell
+5|The Woman in White|Victorian Mystery|Wilkie Collins
+6|One Hundred Years of Solitude|Magical Realism|Gabriel García Márquez
+7|Harry Potter and the Sorcerer's Stone|Fantasy|J.K. Rowling
+8|The Hobbit|Fantasy|J.R.R. Tolkien
+9|A Court of Thorns & Roses|Fantasy|Sarah J. Maas
+10|The Lord of the Rings|Fantasy|J.R.R. Tolkien

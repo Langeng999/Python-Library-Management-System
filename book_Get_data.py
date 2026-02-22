@@ -5,10 +5,10 @@ SEP = "|"
 
 def get_data(file_name):
     books = []
-
     if not os.path.exists(file_name):
-        print("Data not found")
-        return books  
+            print("Data not found")
+            return books
+  
 
     with open(file_name, "r", encoding="utf-8") as file:
         for line in file:
