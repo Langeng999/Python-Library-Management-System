@@ -1,4 +1,4 @@
-1|The Silent Patient|Thriller|Alex Michaelides
+1|American Struggle|Political History|Jon Meacham
 2|Of Mice and Men|030132|313
 3|In Cold Blood|True Crime|Truman Capote
 4|1984|Dystopian/Classic|George Orwell
@@ -11,3 +11,5 @@
 11|The Great Gatsby|Fiction|F. Scott Fitzgerald
 12|TumTeav|Novel|Phi-Kho-Sorm
 13|Educated|Non-fiction|Tara Westover
+14|Kolarb Pailen|Novel|Nhok Them
+15|Animal Farm|Political Satire|George Orwell

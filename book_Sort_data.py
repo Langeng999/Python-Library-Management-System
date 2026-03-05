@@ -26,9 +26,9 @@ def sort_book_by_isbn(books):
             break
 
         if sort_choice == 1: 
-            books.sort(key=lambda b: int(b["isbn"]))
+            books.sort(key = lambda b: int(b["isbn"]))
         elif sort_choice == 2:
-            books.sort(key=lambda b: int(b["isbn"]), reverse=True)
+            books.sort(key = lambda b: int(b["isbn"]), reverse=True)
         else:
             print("Invalid choice. Please enter 0-2.")
             continue
